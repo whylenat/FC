@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="{% static 'css/fightstyle.css'%}">
 	<style>
 		.player_container{
-			background-image: url({% static 'img/human.png'%});
+			background-image: url({% static 'img/fantasy.png'%});
 			background-position: center center; 
 			background-repeat: no-repeat;
 			background-size: contain;
@@ -14,7 +14,7 @@
 			height: 200px
 		}
 		.enemy_container{
-			background-image: url({% static 'img/ninza.png'%});
+			background-image: url({% static 'img/dragon.png'%});
 			background-position: center center; 
 			background-repeat: no-repeat;
 			background-size: contain;
@@ -35,12 +35,12 @@
 {% block content %}
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-xs-6" style="padding: 0px">
-			{# Вставил имена и айдишники для Игрока и Врага, для отправки запроса #}
+		<div class="col-xs-6" style="padding: 0px; border: 6px, solid yellow">
+			{# relevant comments #}
 			<div class="col-xs-2 player_name" data-id = "{{players.0.id}}">{{players.0.name}}</div>
 			<div class="col-xs-10 health_bar "><div id ="player" class="health_div " style="float: left; width: {{players.0.health}}%"></div></div>
 		</div>
-		<div class="col-xs-6" style="padding: 0px">
+		<div class="col-xs-6" style="padding: 0px; border: 6px, solid yellow">
 			<div  class="col-xs-10 health_bar "><div id="enemy" class="health_div" style="float: right; width: {{players.1.health}}% "></div></div>
 			<div class="col-xs-2 enemy_name" data-id = "{{players.1.id}}">{{players.1.name}}</div>
 		</div>
@@ -62,8 +62,7 @@
 		</div>
 	</div>
 	<button id="fight" class="btn btn-danger">Attack</button>
-	{# Переход на страницу с комнатами #}
-	<a href="/main" title=""><button class="btn">Return to rooms</button></a>
+	<a href="/main" title=""><button class="btn">Back to rooms</button></a>
 </div>
 {% endblock content%}
 {% block scripts %}
