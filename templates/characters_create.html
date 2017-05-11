@@ -7,7 +7,7 @@
 {% block content %}
 <form action="/main/" method="POST" >
 {% csrf_token %}
-	Room: <input type="text" name = "nameRoom"><br>
+	Name Room: <input type="text" name = "nameRoom"><br>
 	<div class="col-xs-12 col-sm-6 player_div charactr_div" >
 	Name:<input type="text" name="nameChar" placeholder="Input Name"><br>
 	Race:<select name="raceChar">
@@ -25,6 +25,7 @@
 	</div>
 	<button type="submit" class="btn btn-success">OK</button>
 </form>
+{# Переход на страницу с комнатами. #}
 <a href="/main"><button type="submit" class="btn btn-danger">Cancel</button></a>
 		
 {% endblock content %}
